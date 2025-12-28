@@ -1787,7 +1787,7 @@ applyTheme();
         clearOverlayCache();
         ensureHook();
         updateUI();
-        showToast('Changes applied. Move map or place pixel to see them.');
+        showToast('Changes applied.');
     });
 
     $('op-mode-toggle').addEventListener('click', () => {
@@ -1798,7 +1798,7 @@ applyTheme();
         clearOverlayCache();
         ensureHook();
         updateUI();
-        showToast('Mode changed. Move map to update.');
+        showToast('Mode changed.');
     });
 
     $('op-autocap-toggle').addEventListener('click', () => {
@@ -1843,7 +1843,7 @@ applyTheme();
         clearOverlayCache();
         ensureHook();
         updateUI();
-        showToast('Error mode updated. Move map to see changes.');
+        showToast('Error mode updated.');
     });
 
     document.querySelectorAll('.op-tab-btn').forEach(btn => {
@@ -1894,7 +1894,7 @@ applyTheme();
 
         const debouncedRefresh = debounce(() => {
         clearOverlayCache();
-        showToast('Position updated. Move map to see change.', 2000);
+        showToast('Position updated.', 2000);
     }, 500);
 
     const debouncedSave = debounce(() => {
@@ -1933,7 +1933,7 @@ applyTheme();
     $('op-opacity-slider').addEventListener('change', async () => {
         await saveConfig(['overlays']);
         clearOverlayCache();
-        showToast('Opacity saved. Move map to update.');
+        showToast('Opacity saved.');
     });
 
     $('op-download-overlay').addEventListener('click', () => {
@@ -2279,7 +2279,6 @@ async function updateOverlayProgress() {
             ov.savedFilters = colors;
             await saveConfig(['overlays']);
             clearOverlayCache();
-            showToast(message + ' Move map to see changes.');
         };
 
         document.getElementById('op-ca-apply-filter').onclick = () => {
